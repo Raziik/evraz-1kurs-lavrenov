@@ -13,18 +13,7 @@ function makegreen() {
     body.style.backgroundColor = 'green';
 }
 
-let change = prompt ("изменить текст div ниже")
-let changeDOM = document.getElementById('change');
-changeDOM.innerText = change;
-console.log(change)
-{
-function () {
-    let body = document.getElementById('sdf');
-    body.style.backgroundColor = '';
+function buttonclick(elem) {
+    elem.value="новый текст кнопки"
 }
 
-
-function clearDiv() {
-    console.log('очистить всё');
-    let div = document.getElementById('clear');
-    div.innerText = 'clear';
