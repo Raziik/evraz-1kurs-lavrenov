@@ -1,0 +1,28 @@
+body{margin: 0}
+
+.head-top-links {
+    display: flex;
+    flex-direction: row;
+}
+.head-bottom {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.headTopLinks{
+    display: flex;
+}
+
+.headTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headTopLinks .link {
+    margin-right: 20px;
+}
