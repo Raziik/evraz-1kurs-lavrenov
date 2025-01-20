@@ -1,6 +1,12 @@
 body{margin: 0}
 
-.head-top-links {
+.head {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.head-top-logo {
     display: flex;
     flex-direction: row;
 }
@@ -12,6 +18,10 @@ body{margin: 0}
     align-items: center;
     text-align: center;
     z-index: 2;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSOorXDBo1a1vKRDyKiV-z_jqQ8ys1Whtw0A&s');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .headTopLinks{
@@ -21,8 +31,13 @@ body{margin: 0}
 .headTop {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
 .headTopLinks .link {
     margin-right: 20px;
+}
+.headTop.link{
+    margin-right: 50px;
 }
