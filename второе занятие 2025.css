@@ -22,6 +22,7 @@ body{margin: 0}
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    font-size:30px
 }
 
 .headTopLinks{
@@ -33,11 +34,45 @@ body{margin: 0}
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    padding: 0 100px;
 }
 
 .headTopLinks .link {
     margin-right: 20px;
 }
+
+.headTopLinks .link a{
+    text-decoration: none;
+}
 .headTop.link{
     margin-right: 50px;
 }
+.head2 {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+.headTop2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 500px;
+}
+
+
+
+.head-bottom3 {
+    flex: 1 1 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK7x38kTAd_tgWrJGf7CcuqHnwt0LINOfOtA&s');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+}
+
