@@ -1,9 +1,30 @@
+body{
+    margin:0;
+    display: flex;
+    flex-direction: row;
+}
+
 .name2 {
     color:green;
 }
 .name3 {
     color:red;
 }
-.head-bottom{
+.head-bottom {
+    display: flex;
+    flex-direction: column;
 
+}
+.head-bottom2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    height: 1vh;
+    padding: 0 600px;
+
+
+}
+
+.head {
+    width: 50%;
 }
