@@ -1,4 +1,4 @@
-// let i=5
+
 // function addli(){
 //     let addElement=document.getElementById('add')
 //
@@ -20,10 +20,7 @@ function addli() {
     } else
         liElement.innerText = input.value
 
-
 }
-
-
 let b = name
 
 function addlI() {
@@ -36,6 +33,5 @@ function addlI() {
         alert('добавить значение')
     } else
         liElement.innerText = input.value
-
 
 }

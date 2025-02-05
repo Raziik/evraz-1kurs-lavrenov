@@ -1,15 +1,16 @@
-body {
+ body{
     margin:0;
     display: flex;
     flex-direction: row;
 }
 
-.name2 {
+.name1 {
     color:green;
 }
 .name3 {
     color:red;
 }
+
 .head-bottom {
     display: flex;
     flex-direction: column;
