@@ -23,7 +23,7 @@ function addli() {
 }
 let b = name
 
-function addlI() {
+function addlI2() {
     let addElement = document.getElementById('add.2')
     let liElement = document.createElement('lI')
     liElement.innnetText = b

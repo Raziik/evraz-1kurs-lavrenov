@@ -1,60 +1,30 @@
-let i = name
-
-function addli1() {
-    let addElement = document.getElementById('add1')
-    let liElement = document.createElement('li')
-    liElement.innnetText = i
-    addElement.append(liElement)
-    let input = document.getElementById('name')
-    if (input.value === '') {
-        alert('добавить значение')
-    } else
-        liElement.innerText = input.value
-
-
-}
-
-
-let b = name
-
-function addli2() {
-    let addElement = document.getElementById('add2')
-    let liElement = document.createElement('lI')
-    liElement.innnetText = b
-    addElement.append(liElement)
-    let input = document.getElementById('name.2')
-    if (input.value === '') {
-        alert('добавить значение')
-    } else
-        liElement.innerText = input.value
-
-
-}
 let a = name
 
-function addlI3 () {
-    let addElement = document.getElementById('add3')
+function addli1() {
+    let addElement = document.getElementById('add.1')
     let liElement = document.createElement('li')
     liElement.innnetText = a
     addElement.append(liElement)
-    let input = document.getElementById('name')
+    let input = document.getElementById('name1')
     if (input.value === '') {
-        alert('сколько добавить')
+        alert('добавить значение')
     } else
         liElement.innerText = input.value
 
+}
+let b = name
+
+function addli2() {
+    let addElement = document.getElementById('add.2')
+    let liElement = document.createElement('li2')
+    liElement.innnetText = b
+    addElement.append(liElement)
+    let input = document.getElementById('name3')
+    if (input.value === '') {
+        alert('добавить значение')
+    } else
+        liElement.innerText = input.value
 
 }
-let c = name
-function addli4() {
-    let addElement = document.getElementById('add4')
-    let liElement = document.createElement('li')
-    liElement.innerText = c
-    addElement.append(liElement)
-    let input = document.getElementById('name')
-    if (input.value === '') {
-        alert('сколько добавить')
-    } else
-        liElement.InnerText = input.value
-}
+
 
