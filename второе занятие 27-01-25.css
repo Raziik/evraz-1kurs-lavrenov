@@ -13,18 +13,9 @@ body {
 .head-bottom {
     display: flex;
     flex-direction: column;
-
+    width:200px;
+    height: 200vh;
 }
-.head-bottom2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center ;
-    height: 100vh;
-    padding:  600px;
-
-
-}
-
 .head {
     width: 50%;
 }
