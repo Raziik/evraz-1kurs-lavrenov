@@ -1,37 +1,43 @@
-let a = 1
-
 function addli1() {
     let addElement = document.getElementById('add.1')
-    let liElement = document.createElement('li')
-    liElement.innnetText = a
-    addElement.append(liElement)
-    a=a+1
-    let input = document.getElementById('name1')
-    if (input.value === '') {
+    let inputName = document.getElementById('name1')
+    let inputKol = document.getElementById('name2')
+
+    if (inputName.value === '') {
         alert('добавить значение')
-    } else
-        liElement.innerText = input.value
-}
+    } else {
+        if (inputKol.value === '') {
+            alert('добавить количество')
+        }
+        else {
+            for (let i = 0; i < inputKol; i++) {
+                let liElement = document.createElement('li')
+                liElement.innerText = inputName.value
+                addElement.append(liElement)
+            }
 
-for (let a= 0; a < 25; a++ ) {
-    console.log(a+1,'')
+            inputName.value = '';
+            inputKol.value = '';
+        }
+    }
 }
-
-let b = 1
 
 function addli2() {
     let addElement = document.getElementById('add.2')
-    let liElement = document.createElement('li')
-    liElement.innnetText = b
-    addElement.append(liElement)
-    b=b+1
-    let input = document.getElementById('name3')
-    if (input.value === '') {
-        alert('добавить значение')
-    } else
-        liElement.innerText = input.value
+    let inputName = document.getElementById('name5')
+    let inputKol = document.getElementById('name6')
 
-}
-for (let b= 0; b < 25; b++ ) {
-    console.log(b+1,'')
+    if (inputName.value === ''){
+        alert('добавить значение')
+    }else {
+        if (inputKol.value===''){
+            alert('добавить значение')
+        }
+        else{
+            for(let b = 0; b < inputKol;b++){
+                let liElement
+            }
+        }
+    }
+
 }
