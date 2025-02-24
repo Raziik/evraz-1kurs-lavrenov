@@ -6,15 +6,12 @@ body {
 .name1 {
     color:green;
 }
-.name2 {
+.name5 {
     color:red;
 }
 
 .head-bottom {
-    display: flex;
-    flex-direction: column;
-    width:200px;
-    height: 200vh;
+
 }
 .head {
     width: 50%;
