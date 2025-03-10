@@ -1,11 +1,17 @@
 let listDOM = document.getElementById('list');
 let inputName = document.getElementById('name');
 let selectCategory = document.getElementById('category');
+let selectcolor = {
+    'black':'чёрный',
+    'white':'белый',
+    'grey': 'серый',
+}
 let inputPrice = document.getElementById('price');
 let inputCount = document.getElementById('count');
 let inputDiscount = document.getElementById('discount');
 let inputDescription = document.getElementById('description');
-
+let inputpv = document.getElementById('pv');
+let inputoplata = document.getElementById('oplata');
 let categories = {
     'clothes': 'Одежда',
     'shoes': 'Обувь',
@@ -23,26 +29,19 @@ function discount(item) {
     if (item) {
         // чтобы перебить ранее написанный стиль с !important
         field.style.setProperty('display', 'flex', 'important')
-    }
-    else {
+    } else {
         // чтобы перебить ранее написанный стиль с !important
         field.style.setProperty('display', 'none', 'important')
     }
 }
-function discount2 (item2) {
-    let field = document.getElementById('discountDom2')
-
-    if (item2) {
-        // чтобы перебить ранее написанный стиль с !important
-        field.style.setProperty('display', 'flex', 'important')
-    }
-    else {
-        // чтобы перебить ранее написанный стиль с !important
-        field.style.setProperty('display', 'none', 'important')
+function oplata(item){
+    let field = document.getElementById('oplataDom')
+    if (item){
+        field.style.setProperty('display','flex','important')
+    }else{
+        field.style.setProperty('display','none','important')
     }
 }
-
-
 function addTovar() {
     // находим активный радио-инпут, который выбран
     let discountChoose = document.querySelector('input[name=discount]:checked');
@@ -62,14 +61,14 @@ function addTovar() {
         price = `<div class="tovar-price">
                     <div>Цена: </div>
                     <div>
-                        <div class="tovar-price-old">${ inputPrice.value } руб.</div>
-                        <div>${ newPrice } руб.</div>
+                        <div class="tovar-price-old">${inputPrice.value} руб.</div>
+                        <div>${newPrice} руб.</div>
                     </div>
                 </div>`
+    } else {
+        price = `<div class="tovar-price">Цена: ${inputPrice.value} руб.</div>`;
     }
-    else {
-        price = `<div class="tovar-price">Цена: ${ inputPrice.value } руб.</div>`;
-    }
+
 
     // достаем все чекбоксы особенностей и генерируем текст
     let specialsText = '';
@@ -80,13 +79,16 @@ function addTovar() {
         specialsText += ' ' + specialsObj[specials[i].value];
     }
 
-    let card = `<div class="tovar-name">${ inputName.value }</div>
-            <div class="tovar-category">${ categories[selectCategory.value] }</div>
-            <div class="tovar-specials">Особенности: ${ specialsText }</div>
-            <div class="tovar-description">${ inputDescription.value }</div>
+    let card = `<div class="tovar-name">${inputName.value}</div>
+            <div class="tovar-category">${categories[selectCategory.value]}</div>
+            <div class="tovar-color">${color[selectcolor.value]}</div>
+            <div class="tovar-specials">Особенности: ${specialsText}</div>
+            <div class="tovar-description">${inputDescription.value}</div>
+             <div class="tovar-pv">${inputpv.value}</div>
+            <div class="tovar-oplata">оплата: ${inputoplata.value} </div>
             <div class="tovar-price-count">
-                ${ price }
-                <div class="count">Количество: ${ inputCount.value } шт.</div>
+                ${price}
+                <div class="count">Количество: ${inputCount.value} шт.</div>
             </div>
             <div class="tovar-close">X</div>`
 
