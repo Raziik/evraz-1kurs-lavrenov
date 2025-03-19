@@ -68,7 +68,33 @@ function addTovar() {
     } else {
         price = `<div class="tovar-price">Цена: ${inputPrice.value} руб.</div>`;
     }
+    function addTovar() {
+        // находим активный радио-инпут, который выбран
+        let oplataChoose = document.querySelector('input[name=oplata]:checked');
 
+        // создаем контейнер для товара
+        let cardTovar = document.createElement('div1');
+        cardTovar.classList.add('tovar1');
+
+        // создаем html наполнение для блока с ценой
+        let price = ``;
+
+        // проверим, а есть ли в discountChoose.value значение
+        if (discountChoose.value === 'true') {
+            // inputDiscount
+            let opl = +inputPrice.value * +inputoplata.value / 100;
+            let newPrice = +inputPrice.value - opl;
+            price = `<div class="tovar-price">
+                    <div>Цена: </div>
+                    <div>
+                        <div class="tovar-price-old">${inputPrice.value} руб.</div>
+                        <div>${newPrice} руб.</div>
+                    </div>
+                </div>`
+        } else {
+            price = `<div class="tovar-price">Цена: ${inputPrice.value} руб.</div>`;
+        }
+    }
 
     // достаем все чекбоксы особенностей и генерируем текст
     let specialsText = '';
