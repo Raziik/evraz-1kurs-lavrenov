@@ -14,6 +14,7 @@ let titleAdd = document.getElementById('title-add')
 let titleEdit = document.getElementById('title-edit')
 
 
+
 let products = [];
 
 // переменная для хранения индекса редактируемого товара
@@ -59,7 +60,7 @@ function editTovar(){
         addTovarCard(product, productIndex)
     }
 }
-function discount(item) {
+    function discount(item) {
     let field = document.getElementById('discountDom');
 
     if (item) {
@@ -71,8 +72,16 @@ function discount(item) {
         field.style.setProperty('display', 'none', 'important');
     }
 }
-function oplata(item) {
+    function oplata(item) {
     let field = document.getElementById('oplataDom');
+    if (item) {
+        // чтобы перебить ранее написанный стиль с !important
+        field.style.setProperty('display', 'flex', 'important');
+    }
+    else {
+        // чтобы перебить ранее написанный стиль с !important
+        field.style.setProperty('display', 'none', 'important');
+    }
 
 }
 function addTovar() {
@@ -107,7 +116,7 @@ function addTovar() {
     }
 
 
-    function addTovarCard(tovar, index) {
+    function addTovarCard(tovar, Index) {
         // создаем контейнер для товара
         let cardTovar = document.createElement('div');
         cardTovar.classList.add('tovar');
@@ -151,6 +160,7 @@ function addTovar() {
             </div>
             <div class="tovar-close">X</div>
             <div class="tovar-edit">
+            
             </div>`;
 
         cardTovar.innerHTML = card;
@@ -160,83 +170,41 @@ function addTovar() {
     }
 
 // редактирование товара, открытие свойств товара в форме товара
-    function edit(productIndex) {
-        currentEditProduct = productIndex;
-
-        buttonAdd.classList.remove('hide');
-        buttonEdit.classList.add('hide');
-        titleAdd.classList.remove('hide');
-        titleEdit.classList.add('hide');
-
-        let product = products[productIndex];
-        inputName.value = product.name;
-        inputPrice.value = product.price;
-        inputCount.value = product.count;
-        inputDescription.value = product.description;
-        selectCategory.value = product.category;
 
 
-        // ищем нужный инпут радио с нужным value значением, чтобы его отметить как выбранный
-        let radio = document.querySelector(`input[name=discount][value=${product.discountChoose}]`);
-        if (radio) {
-            radio.checked = true;
-        }
-
-        for (let i = 0; i < product.specials.length; i++) {
-            // ищем нужный инпут чекбокс с нужным value значением, чтобы его отметить как выбранный
-            let specialValue = product.specials[i];
-            let checkbox = document.querySelector(`input[name=specials][value=${specialValue}]`);
-            if (checkbox) {
-                checkbox.checked = true;
-            }
-        }
-
-        let radio2 = document.querySelector(`input[name=oplata][value=${product.oplataChoose}]`);
-        if (radio2) {
-            radio2.checked = true;
-        }
-
-    }
 
 // обновление товара в массиве товаров после его редактирования
-    function editTovar() {
-        event.preventDefault();
+     function edit(product)  {
+         function edit(index) {
+             titleAdd.classList.add('hide');
+             titleEdit.classList.remove('hide');
+             buttonAdd.classList.add('hide');
+             buttonEdit.classList.remove('hide');
 
-        buttonAdd.classList.remove('hide');
-        buttonEdit.classList.add('hide');
-        titleAdd.classList.remove('hide');
-        titleEdit.classList.add('hide');
+             let product = products[index];
+             inputName.value = product.name;
+             selectCategory.value = product.category;
+             inputPrice.value = product.price;
+             inputCount.value = product.count;
+             inputDiscount.value = product.discount;
+             inputDescription.value = product.description;
+             inputoplata.value = product.oplata
+             let discountChoose = document.querySelector(`input[name=discountChoose2][value=${ product.discountChoose }]`);
+             discountChoose.checked = true;
 
-        let product = products[currentEditProduct];
-        currentEditProduct = null;
+             if (product.discountChoose == 'true') {
+                 inputDiscountBody.classList.remove('hide')
+             }
 
-        // находим активный радио-инпут, который выбран
-        let discountChoose = document.querySelector('input[name=discount]:checked');
+             for (let i = 0; i < product.specials.length; i++) {
+                 let specialValue = product.specials[i]
+                 let specials = document.querySelector(`input[name=specials][value=${ specialValue }]`);
+                 specials.checked = true;
+             }
+         }
 
-        // достаем все чекбоксы особенностей и генерируем текст
-        let specialsValues = [];
-        let specials = document.querySelectorAll('input[name=specials]:checked');
-
-        for (let i = 0; i < specials.length; i++) {
-            specialsValues.push(specials[i].value);
-        }
-
-        product.name = inputName.value;
-        product.category = selectCategory.value;
-        product.specials = specialsValues;
-        product.description = inputDescription.value;
-        product.pv = inputpv.value;
-        product.discountChoose = discountChoose.value;
-        product.discount = inputDiscount.value;
-        product.price = inputPrice.value;
-        product.count = inputCount.value;
-        product.oplataChoose = oplataChoose.value
-        product.oplata = inputoplata.value
-
-        form.reset();
-
-        buildAgain();
     }
+
 
 // полностью очищаем список продуктов и строим его заново, вызывая функцию построения карточки товара
     function buildAgain() {
